@@ -1,10 +1,68 @@
-#map {
-    height: 100%;
+.search {
+    z-index: 1;
+    position: fixed;
+    top: 2vh;
+    left: 10vw;
+    right: 10vw;
+    max-width: 80vw;
+    display: flex;
+    flex-flow: column nowrap; 
+    justify-content: center;
 }
 
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+.search-field {
+    max-width: 80vw;
+    padding: 10px;
+    font-size: 1.2em;
+    color: blue;
+    border-radius: 5px;
+}
+
+ul {
+    background: white;
+    border: 1px solid black;
+    overflow: auto;
+    padding: 10px;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+.name {
+    list-style: none;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.address {
+    padding: 5px;
+    padding-top: 0px;
+    font-size: 12px;
+    border-bottom: 1px groove;
+}
+
+p {
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    border: 1px black solid;
+    cursor: pointer;
+     border-radius: 5px;
+}
+p:hover {
+    background-color: rgb(84, 194, 229);
+    color: white;
+}
+
+.box {
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: #269acd;
+    color: white;
+}
+@media only screen and (min-width: 900px) {
+    .search {
+        max-width: 33vw;
+    }
 }
