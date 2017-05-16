@@ -13,7 +13,16 @@
 </head>
 
 <body>
-
+    <div class="search">
+    <input id="search-field" class="search-field" type="text" placeholder="Filter" data-bind="textInput: query">
+    <ul id="searchResults" data-bind="foreach: showMarkers, visible: showList">
+        <div class="box" data-bind="click: $parent.showInfoWindow">
+            <li class="name" data-bind="text: name"></li>
+            <li class="address" data-bind="text: streetAddress"></li>
+        </div>
+    </ul>
+    <p data-bind="click: showList() ? hideList : showList, text: showList() ? 'Hide Suggestions' : 'Show Suggestions'"></p>
+</div>
 
     <div id="map"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
@@ -22,7 +31,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
         crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPyUvcjvSr5PVUg-7e2yGJvp05e5AgIck&libraries=places&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPyUvcjvSr5PVUg-7e2yGJvp05e5AgIck&libraries=places&&callback=googleMapSuccess" onerror="googleMapError()" async defer></script>
    </body>
 
 </html>
